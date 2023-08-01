@@ -20,25 +20,27 @@ module.exports = (sequelize, DataTypes) => {
           autoIncrement: true
           
       },
-      name: {
-          type: DataTypes.STRING,
+      event_id: {
+          type: DataTypes.INTEGER,
           allowNull: false
       },
-      genre: {
-          type: DataTypes.TEXT,
+      band_id: {
+          type: DataTypes.INTEGER,
           allowNull: false
       },
-      available_start_time: {
+      meet_start_time: {
           type: DataTypes.DATE,
           allowNull: false
       },
-      end_time: {
+      meet_end_time: {
           type: DataTypes.DATE,
           allowNull: false
       }
   }, {
     sequelize,
-    modelName: 'meet_greet',
-  });
-  return meet_greet;
+  modelName: 'Meet_greet',
+  tableName: 'meet_greet',
+  timestamps: false
+});
+return meet_greet;
 };
